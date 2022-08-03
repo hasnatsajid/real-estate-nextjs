@@ -81,13 +81,14 @@
 
           @media (max-width: 940px) {
             padding: 0.5rem 1rem;
-            width: 100%;
+            display: block;
+            text-align: center;
           }
         }
       }
 
       @media (max-width: 940px) {
-        margin: 2rem 0;
+        margin: 2rem 2rem 2rem 0;
       }
     }
 
