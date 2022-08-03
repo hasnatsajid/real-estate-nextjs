@@ -50,6 +50,16 @@
             width: 100%;
           }
         }
+
+        @media (max-width: 940px) {
+          display: block;
+          margin: 0.5rem;
+          font-size: 1.2rem;
+        }
+      }
+
+      @media (max-width: 940px) {
+        flex-direction: column-reverse;
       }
     }
 
@@ -68,7 +78,16 @@
             color: $white;
             background-color: $dark-blue;
           }
+
+          @media (max-width: 940px) {
+            padding: 0.5rem 1rem;
+            width: 100%;
+          }
         }
+      }
+
+      @media (max-width: 940px) {
+        margin: 2rem 0;
       }
     }
 
