@@ -8,9 +8,9 @@ const Showcase = () => {
   return (
     <div className="showcase">
       <div className="hero">
-        <div className="cover">
+        {/* <div className="cover">
           <Image src={Home} alt="Home sweet home" />
-        </div>
+        </div> */}
 
         <div className="search-container">
           <input type="search" name="search" id="search" />
