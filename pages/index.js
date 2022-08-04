@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import Image from 'next/image';
-import Latest from '../components/Latest';
+import LatestProjects from '../components/LatestProjects';
 import Layout from '../components/Layout';
 import Showcase from '../components/Showcase';
 
@@ -15,7 +15,7 @@ export default function Home() {
 
       <Layout>
         <Showcase />
-        <Latest />
+        <LatestProjects />
       </Layout>
     </div>
   );
