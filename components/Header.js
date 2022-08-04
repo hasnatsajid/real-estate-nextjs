@@ -5,9 +5,6 @@ import { HiMenuAlt4, HiX } from 'react-icons/hi';
 
 const Header = () => {
   const [menuActive, setMenuActive] = useState(false);
-  // const toggleMenu = () => {
-  //   setMenuActive((prev) => !prev);
-  // };
 
   return (
     <header className="header">
@@ -21,25 +18,25 @@ const Header = () => {
           <div className="navbar">
             <ul>
               <li>
-                <a href="/">Buy</a>
+                <a href="/for-sale">Buy</a>
               </li>
               <li>
-                <a href="/">Rent</a>
+                <a href="/for-rent">Rent</a>
               </li>
               <li>
-                <a href="/">Condos</a>
+                <a href="/condos">Condos</a>
               </li>
               <li>
-                <a href="/">Commercial</a>
+                <a href="/commercial">Commercial</a>
               </li>
               <li>
-                <a href="/">Find Agent</a>
+                <a href="/agents">Find Agent</a>
               </li>
               <li>
-                <a href="/">News</a>
+                <a href="/news">News</a>
               </li>
               <li>
-                <a href="/">Advertise</a>
+                <a href="/advertise">Advertise</a>
               </li>
             </ul>
             <div className="auth">
@@ -49,6 +46,36 @@ const Header = () => {
             </div>
           </div>
         )}
+        <div className="navbar hideOnMobile">
+          <ul>
+            <li>
+              <a href="/for-sale">Buy</a>
+            </li>
+            <li>
+              <a href="/for-rent">Rent</a>
+            </li>
+            <li>
+              <a href="/condos">Condos</a>
+            </li>
+            <li>
+              <a href="/commercial">Commercial</a>
+            </li>
+            <li>
+              <a href="/agents">Find Agent</a>
+            </li>
+            <li>
+              <a href="/news">News</a>
+            </li>
+            <li>
+              <a href="/advertise">Advertise</a>
+            </li>
+          </ul>
+          <div className="auth">
+            <div className="login">
+              <a href="/login">Login</a>
+            </div>
+          </div>
+        </div>
       </nav>
     </header>
   );
