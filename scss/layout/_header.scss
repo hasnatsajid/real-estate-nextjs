@@ -7,6 +7,19 @@
     display: flex;
     align-items: center;
 
+    .menu-icon {
+      position: absolute;
+      right: 0;
+      top: 3%;
+      right: 5%;
+      font-size: 1.5rem;
+      color: white;
+      background: $dark-blue;
+      border-radius: 50%;
+      width: 2rem;
+      height: 2rem;
+    }
+
     .logo {
       width: 250px;
 
@@ -83,6 +96,8 @@
             padding: 0.5rem 1rem;
             display: block;
             text-align: center;
+            background-color: $dark-blue;
+            color: $white;
           }
         }
       }
@@ -95,5 +110,10 @@
     @media (max-width: 940px) {
       flex-direction: column;
     }
+  }
+
+  @media (max-width: 940px) {
+    height: 100vh;
+    min-height: 100vh;
   }
 }
