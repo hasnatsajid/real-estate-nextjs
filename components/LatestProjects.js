@@ -1,4 +1,6 @@
 import Image from 'next/image';
+import Link from 'next/link';
+
 import { CgArrowLongRightC } from 'react-icons/cg';
 import House1 from '../public/houses/house1.jpg';
 import House2 from '../public/houses/house2.jpg';
@@ -14,8 +16,12 @@ const LatestProjects = () => {
             <h1>Latest Projects</h1>
           </div>
           <div className="latest__heading-more">
-            <span>View More</span>
-            <CgArrowLongRightC />
+            <Link href="/">
+              <a>
+                <span>View More</span>
+                <CgArrowLongRightC />
+              </a>
+            </Link>
           </div>
         </div>
         <div className="latest__listings">

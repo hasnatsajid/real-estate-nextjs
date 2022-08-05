@@ -1,0 +1,18 @@
+.footer {
+  background-color: $primary-blue;
+
+  &__social {
+    text-align: center;
+    padding: 7px;
+
+    &-link {
+      font-size: 20px;
+      margin: 0 1rem;
+
+      svg {
+        color: $white;
+        vertical-align: middle;
+      }
+    }
+  }
+}

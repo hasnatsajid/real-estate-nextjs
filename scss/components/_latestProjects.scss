@@ -15,15 +15,17 @@
     padding: 1rem 0;
 
     &-more {
-      display: flex;
-      align-items: center;
+      a {
+        display: flex;
+        align-items: center;
 
-      & > span {
-        margin-right: 15px;
-      }
+        & > span {
+          margin-right: 15px;
+        }
 
-      svg {
-        font-size: 24px;
+        svg {
+          font-size: 24px;
+        }
       }
     }
   }
@@ -37,6 +39,10 @@
 
       &:not(:last-child) {
         margin-right: 15px;
+
+        @media (max-width: 940px) {
+          margin-right: auto;
+        }
       }
 
       & > span {
@@ -46,6 +52,14 @@
       p {
         color: $text-gray;
       }
+
+      @media (max-width: 940px) {
+        width: 45%;
+      }
+    }
+
+    @media (max-width: 940px) {
+      flex-wrap: wrap;
     }
   }
 }
