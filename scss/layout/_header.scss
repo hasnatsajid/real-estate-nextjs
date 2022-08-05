@@ -122,8 +122,10 @@
     }
   }
 
-  @media (max-width: 940px) {
-    height: 100vh;
-    min-height: 100vh;
+  .mobileActive {
+    @media (max-width: 940px) {
+      height: 100vh;
+      min-height: 100vh;
+    }
   }
 }

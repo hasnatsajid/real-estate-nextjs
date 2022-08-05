@@ -1,23 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap');
+
 .showcase {
   width: 100%;
   margin: auto;
 
   .hero {
     position: relative;
-    //
     height: 80vh;
     min-height: 80vh;
     background: url('../../public/home.jpg');
     background-size: cover;
     background-repeat: no-repeat;
+    padding-top: 5%;
 
     .search-container {
       height: inherit;
-      width: 100%;
+      width: 40%;
+      margin: auto;
       text-align: center;
 
       .search-bar {
         position: relative;
+
+        h1 {
+          font-family: 'Roboto', sans-serif;
+          color: $white;
+          text-shadow: rgba(0, 0, 0, 0.25) 0px 1px 3px;
+          font-size: 3rem;
+        }
+
+        #search {
+          margin: 10% 0;
+          width: 100%;
+          border: none;
+          border-radius: 50px;
+
+          &:focus {
+            outline: none;
+          }
+        }
       }
     }
   }

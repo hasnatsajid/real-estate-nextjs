@@ -16,7 +16,7 @@ const Header = () => {
         </div>
         {menuActive && (
           <div className="navbar">
-            <ul>
+            <ul className="mobileActive">
               <li>
                 <a href="/for-sale">Buy</a>
               </li>

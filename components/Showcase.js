@@ -8,11 +8,10 @@ const Showcase = () => {
   return (
     <div className="showcase">
       <div className="hero">
-        {/* <Image src={Home} alt="Home sweet home" /> */}
-
         <div className="search-container">
           <div className="search-bar">
-            <input type="search" name="search" id="search" />
+            <h1>Search your property</h1>
+            <input type="search" name="search" id="search" placeholder="Search Location" />
           </div>
         </div>
       </div>
