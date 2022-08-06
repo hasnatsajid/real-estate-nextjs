@@ -18,10 +18,10 @@ const Header = () => {
           <div className="navbar">
             <ul className="mobileActive">
               <li>
-                <a href="/for-sale">Buy</a>
+                <a href="/buy">Buy</a>
               </li>
               <li>
-                <a href="/for-rent">Rent</a>
+                <a href="/rent">Rent</a>
               </li>
               <li>
                 <a href="/condos">Condos</a>
@@ -49,10 +49,10 @@ const Header = () => {
         <div className="navbar hideOnMobile">
           <ul>
             <li>
-              <a href="/for-sale">Buy</a>
+              <a href="/buy">Buy</a>
             </li>
             <li>
-              <a href="/for-rent">Rent</a>
+              <a href="/rent">Rent</a>
             </li>
             <li>
               <a href="/condos">Condos</a>

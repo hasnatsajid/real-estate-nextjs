@@ -1,8 +1,11 @@
 import Head from 'next/head';
 import AdvanceSearch from '../components/AdvanceSearch';
 import Layout from '../components/Layout';
+import Listing from '../components/Listing';
 
-export default function ForSale() {
+import house1 from '../public/houses/house1.jpg';
+
+export default function Buy() {
   return (
     <div className="app">
       <Head>
@@ -13,6 +16,14 @@ export default function ForSale() {
 
       <Layout>
         <AdvanceSearch />
+        <div className="listings">
+          <div className="listings__container">
+            <div className="category-info">
+              <h3 className="mt-4">158,427 Results of Property For Sale in Thailand</h3>
+              <Listing img={house1} />
+            </div>
+          </div>
+        </div>
       </Layout>
     </div>
   );
