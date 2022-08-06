@@ -2,7 +2,7 @@ import Head from 'next/head';
 import AdvanceSearch from '../components/AdvanceSearch';
 import Layout from '../components/Layout';
 
-export default function Home() {
+export default function ForSale() {
   return (
     <div className="app">
       <Head>

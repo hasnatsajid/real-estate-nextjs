@@ -1,0 +1,15 @@
+.advanceSearch {
+  padding: 2rem 0;
+  border-bottom: 1px solid $primary-blue;
+
+  .wrapper {
+    width: 90%;
+    margin: auto;
+  }
+
+  .search-btn {
+    background-color: $btn-red;
+    color: $white;
+    border: none;
+  }
+}
