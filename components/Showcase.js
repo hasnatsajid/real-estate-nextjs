@@ -2,6 +2,8 @@ import { useEffect, useState } from 'react';
 import ReactPlayer from 'react-player';
 import Image from 'next/image';
 
+import { IoSearchOutline } from 'react-icons/io5';
+
 import Home from '../public/house.png';
 
 const Showcase = () => {
@@ -11,7 +13,12 @@ const Showcase = () => {
         <div className="search-container">
           <div className="search-bar">
             <h1>Search your property</h1>
-            <input type="search" name="search" id="search" placeholder="Search Location" />
+            <div className="search-input">
+              <input type="search" name="search" id="search" placeholder="Search Location" />
+              <button>
+                <IoSearchOutline />
+              </button>
+            </div>
           </div>
         </div>
       </div>
