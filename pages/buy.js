@@ -4,6 +4,7 @@ import Layout from '../components/Layout';
 import Listing from '../components/Listing';
 
 import house1 from '../public/houses/house1.jpg';
+import house2 from '../public/houses/house2.jpg';
 
 export default function Buy() {
   return (
@@ -21,6 +22,7 @@ export default function Buy() {
             <div className="category-info">
               <h3 className="mt-4">158,427 Results of Property For Sale in Thailand</h3>
               <Listing img={house1} />
+              <Listing img={house2} />
             </div>
           </div>
         </div>

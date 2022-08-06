@@ -1,10 +1,10 @@
 .listing {
   background-color: $white;
+  border-radius: 0.75rem;
+  width: max-content;
 
   &__container {
-    border-radius: 0.75rem;
-    border: 1px solid $primary-blue;
-    width: max-content;
+    // border: 1px solid $primary-blue;
   }
 
   &__agent {
@@ -16,6 +16,10 @@
     &-price {
       font-size: large;
       font-weight: 600;
+    }
+
+    &-title {
+      padding: 0.5rem 0;
     }
 
     &-additional {

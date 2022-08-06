@@ -3,7 +3,7 @@ import { BiBed, BiBath, BiCar } from 'react-icons/bi';
 
 const Listing = ({ img }) => {
   return (
-    <article className="listing">
+    <article className="listing mt-3 mb-5">
       <div className="listing__container">
         <div className="listing__agent"></div>
         <div className="listing__featured-img">
