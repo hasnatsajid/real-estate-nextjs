@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import { BiBed, BiBath, BiCar } from 'react-icons/bi';
-import { FaUserCircle, FaHouseUser } from 'react-icons/fa';
+import { FaHouseUser } from 'react-icons/fa';
 
 const Listing = ({ img, Agent }) => {
   return (

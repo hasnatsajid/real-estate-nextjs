@@ -1,0 +1,12 @@
+@import '../image-gallery.scss';
+
+.detail {
+  .img {
+    width: 80%;
+    margin: auto;
+
+    & > span {
+      width: 100%;
+    }
+  }
+}
