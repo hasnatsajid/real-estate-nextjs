@@ -1,0 +1,23 @@
+@import '../image-gallery.scss';
+
+.detail {
+  .wrapper {
+    width: 990px;
+    margin: auto;
+  }
+
+  .img {
+    width: 80%;
+    margin: auto;
+
+    & > span {
+      width: 100%;
+    }
+  }
+
+  .listing-content {
+    .main-content {
+      width: 660px;
+    }
+  }
+}
