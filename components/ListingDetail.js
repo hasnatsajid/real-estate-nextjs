@@ -29,27 +29,18 @@ const ListingDetail = () => {
         // ref={(i) => (this._imageGallery = i)}
         items={images}
         showPlayButton={false}
-        // onClick={this._onImageClick.bind(this)}
-        // onImageLoad={this._onImageLoad}
-        // onSlide={this._onSlide.bind(this)}
-        // onPause={this._onPause.bind(this)}
-        // onScreenChange={this._onScreenChange.bind(this)}
-        // onPlay={this._onPlay.bind(this)}
-        // infinite={this.state.infinite}
-        // showBullets={this.state.showBullets}
-        // showFullscreenButton={this.state.showFullscreenButton && this.state.showGalleryFullscreenButton}
-        // showPlayButton={sliderSettings.showPlayButton && sliderSettings.showGalleryPlayButton}
         showThumbnails={false}
-        // showIndex={this.state.showIndex}
-        // showNav={false}
-        // isRTL={this.state.isRTL}
-        // thumbnailPosition={this.state.thumbnailPosition}
-        // slideDuration={parseInt(this.state.slideDuration)}
-        // slideInterval={parseInt(this.state.slideInterval)}
-        // slideOnThumbnailOver={this.state.slideOnThumbnailOver}
-        // additionalClass="app-image-gallery"
-        // useWindowKeyDown={this.state.useWindowKeyDown}
       />
+
+      <div className="listing-content">
+        <div className="main-content">
+          <div className="price">${1198000}</div>
+          <div className="meta">
+            <div className="beds"></div>
+          </div>
+        </div>
+        <div className="agent-section"></div>
+      </div>
     </div>
   );
 };
