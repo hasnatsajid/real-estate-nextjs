@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import { useState } from 'react';
 import Logo from '../public/images/logos/logo-flat.png';
 import { HiMenuAlt4, HiX } from 'react-icons/hi';
@@ -18,30 +19,30 @@ const Header = () => {
           <div className="navbar">
             <ul className="mobileActive">
               <li>
-                <a href="/buy">Buy</a>
+                <Link href="/buy">Buy</Link>
               </li>
               <li>
-                <a href="/rent">Rent</a>
+                <Link href="/rent">Rent</Link>
               </li>
               <li>
-                <a href="/condos">Condos</a>
+                <Link href="/condos">Condos</Link>
               </li>
               <li>
-                <a href="/commercial">Commercial</a>
+                <Link href="/commercial">Commercial</Link>
               </li>
               <li>
-                <a href="/agents">Find Agent</a>
+                <Link href="/agents">Find Agent</Link>
               </li>
               <li>
-                <a href="/news">News</a>
+                <Link href="/news">News</Link>
               </li>
               <li>
-                <a href="/advertise">Advertise</a>
+                <Link href="/advertise">Advertise</Link>
               </li>
             </ul>
             <div className="auth">
               <div className="login">
-                <a href="/login">Login</a>
+                <Link href="/login">Login</Link>
               </div>
             </div>
           </div>
@@ -49,30 +50,30 @@ const Header = () => {
         <div className="navbar hideOnMobile">
           <ul>
             <li>
-              <a href="/buy">Buy</a>
+              <Link href="/buy">Buy</Link>
             </li>
             <li>
-              <a href="/rent">Rent</a>
+              <Link href="/rent">Rent</Link>
             </li>
             <li>
-              <a href="/condos">Condos</a>
+              <Link href="/condos">Condos</Link>
             </li>
             <li>
-              <a href="/commercial">Commercial</a>
+              <Link href="/commercial">Commercial</Link>
             </li>
             <li>
-              <a href="/agents">Find Agent</a>
+              <Link href="/agents">Find Agent</Link>
             </li>
             <li>
-              <a href="/news">News</a>
+              <Link href="/news">News</Link>
             </li>
             <li>
-              <a href="/advertise">Advertise</a>
+              <Link href="/advertise">Advertise</Link>
             </li>
           </ul>
           <div className="auth">
             <div className="login">
-              <a href="/login">Login</a>
+              <Link href="/login">Login</Link>
             </div>
           </div>
         </div>
