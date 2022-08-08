@@ -1,6 +1,11 @@
 @import '../image-gallery.scss';
 
 .detail {
+  .wrapper {
+    width: 990px;
+    margin: auto;
+  }
+
   .img {
     width: 80%;
     margin: auto;

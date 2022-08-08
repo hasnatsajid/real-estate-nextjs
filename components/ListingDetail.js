@@ -2,6 +2,9 @@ import Image from 'next/image';
 
 import ImageGallery from 'react-image-gallery';
 
+import { BiBed, BiBath, BiCar } from 'react-icons/bi';
+import { FaHouseUser } from 'react-icons/fa';
+
 import house1 from '../public/houses/house1.jpg';
 import house2 from '../public/houses/house2.jpg';
 import house3 from '../public/houses/house3.jpg';
@@ -33,20 +36,29 @@ const ListingDetail = () => {
       />
 
       <div className="listing-content">
-        <div className="main-content">
-          <div className="price">${1198000}</div>
-          <div className="meta">
-            <div className="beds">
-              <span></span>
+        <div className="wrapper mt-5">
+          <div className="main-content">
+            <div className="price">${1198000}</div>
+            <div className="meta">
+              <div className="beds">
+                <BiBed />
+                <span>3</span>
+              </div>
+              <div className="baths">
+                <BiBath />
+                <span>2</span>
+              </div>
+              <div className="parking">
+                <BiCar />
+                <span>1</span>
+              </div>
+              <div className="area"></div>
             </div>
-            <div className="baths"></div>
-            <div className="parking"></div>
-            <div className="area"></div>
+            <div className="description"></div>
+            <div className="Amenities"></div>
           </div>
-          <div className="description"></div>
-          <div className="Amenities"></div>
+          <div className="agent-section"></div>
         </div>
-        <div className="agent-section"></div>
       </div>
     </div>
   );
