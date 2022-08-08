@@ -36,8 +36,15 @@ const ListingDetail = () => {
         <div className="main-content">
           <div className="price">${1198000}</div>
           <div className="meta">
-            <div className="beds"></div>
+            <div className="beds">
+              <span></span>
+            </div>
+            <div className="baths"></div>
+            <div className="parking"></div>
+            <div className="area"></div>
           </div>
+          <div className="description"></div>
+          <div className="Amenities"></div>
         </div>
         <div className="agent-section"></div>
       </div>
