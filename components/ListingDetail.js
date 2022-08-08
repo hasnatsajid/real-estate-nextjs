@@ -28,6 +28,7 @@ const ListingDetail = () => {
       <ImageGallery
         // ref={(i) => (this._imageGallery = i)}
         items={images}
+        showPlayButton={false}
         // onClick={this._onImageClick.bind(this)}
         // onImageLoad={this._onImageLoad}
         // onSlide={this._onSlide.bind(this)}
@@ -37,10 +38,10 @@ const ListingDetail = () => {
         // infinite={this.state.infinite}
         // showBullets={this.state.showBullets}
         // showFullscreenButton={this.state.showFullscreenButton && this.state.showGalleryFullscreenButton}
-        // showPlayButton={this.state.showPlayButton && this.state.showGalleryPlayButton}
-        // showThumbnails={this.state.showThumbnails}
+        // showPlayButton={sliderSettings.showPlayButton && sliderSettings.showGalleryPlayButton}
+        showThumbnails={false}
         // showIndex={this.state.showIndex}
-        // showNav={this.state.showNav}
+        // showNav={false}
         // isRTL={this.state.isRTL}
         // thumbnailPosition={this.state.thumbnailPosition}
         // slideDuration={parseInt(this.state.slideDuration)}
