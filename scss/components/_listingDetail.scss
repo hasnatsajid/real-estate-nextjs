@@ -82,6 +82,10 @@
         width: 80%;
         margin: auto;
       }
+
+      @media (max-width: 480px) {
+        width: 97%;
+      }
     }
 
     .agent-section {
