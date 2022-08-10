@@ -4,6 +4,8 @@ import LatestProjects from '../components/LatestProjects';
 import Layout from '../components/Layout';
 import Showcase from '../components/Showcase';
 
+import dbConnect from '../lib/dbConnect';
+
 export default function Home() {
   return (
     <div className="app">
@@ -19,4 +21,19 @@ export default function Home() {
       </Layout>
     </div>
   );
+}
+
+/* Retrieves pet(s) data from mongodb database */
+export async function getServerSideProps() {
+  await dbConnect();
+
+  /* find all the data in our database */
+  const result = await Pet.find({});
+  const pets = result.map((doc) => {
+    const pet = doc.toObject();
+    pet._id = pet._id.toString();
+    return pet;
+  });
+
+  return { props: { pets: pets } };
 }
