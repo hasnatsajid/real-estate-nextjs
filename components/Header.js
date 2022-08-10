@@ -16,7 +16,7 @@ const Header = () => {
           <Image src={Logo} alt="My property asia | thailand" />
         </div>
         {menuActive && (
-          <div className="navbar">
+          <div className="menubar">
             <ul className="mobileActive">
               <li>
                 <Link href="/buy">Buy</Link>
@@ -47,7 +47,7 @@ const Header = () => {
             </div>
           </div>
         )}
-        <div className="navbar hideOnMobile">
+        <div className="menubar hideOnMobile">
           <ul>
             <li>
               <Link href="/buy">Buy</Link>

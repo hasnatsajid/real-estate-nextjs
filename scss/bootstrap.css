@@ -201,7 +201,7 @@ address {
 
 ol,
 ul {
-  padding-left: 2rem;
+  /* padding-left: 2rem; */
 }
 
 ol,
@@ -264,8 +264,9 @@ sup {
 }
 
 a {
-  color: var(--bs-link-color);
-  text-decoration: underline;
+  /* color: var(--bs-link-color); */
+  text-decoration: none;
+  /* text-decoration: underline; */
 }
 a:hover {
   color: var(--bs-link-hover-color);
