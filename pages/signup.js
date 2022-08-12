@@ -5,14 +5,14 @@ import google from '../public/svgs/google.svg';
 import fb from '../public/svgs/fb.svg';
 import Link from 'next/link';
 
-export default function Login() {
+export default function Signup() {
   return (
     <div className="login">
       <div className="wrapper">
         <div className="brand">
           <Image src={Logo} />
         </div>
-        <div className="component">Login</div>
+        <div className="component">Create Account</div>
         <div className="providers">
           <div className="google">
             <Link href="/">
@@ -33,8 +33,8 @@ export default function Login() {
         </div>
         <div className="signup">
           <div>
-            <span>Already have an account ?</span>
-            <Link href="/signup">Sign in</Link>
+            <span>Not Registered ?</span>
+            <Link href="/login">Create new account</Link>
           </div>
         </div>
       </div>
