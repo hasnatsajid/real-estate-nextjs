@@ -1,32 +1,32 @@
-import { useSession, signIn, signOut } from 'next-auth/react';
+import Image from 'next/image';
 
-const Login = () => {
-  const { data: session, status } = useSession();
-  if (session) {
-    return (
-      <>
-        Signed in as {session.user.email} <br />
-        <button onClick={() => signOut()}>Sign out</button>
-      </>
-    );
-  }
-  return (
-    <>
-      Not signed in <br />
-      <button onClick={() => signIn()}>Sign in</button>
-    </>
-  );
+import Logo from '../public/images/logos/logo-flat.png';
+import google from '../public/svgs/google.svg';
+import fb from '../public/svgs/fb.svg';
+import Link from 'next/link';
 
+export default function Login() {
   return (
     <div className="login">
       <div className="wrapper">
-        <div className="brand"></div>
-        <div className="category"></div>
-        <div className="credentials"></div>
+        <div className="brand">
+          <Image src={Logo} />
+        </div>
+        <div className="component">Login</div>
+        <div className="providers">
+          <div className="google">
+            <Link href="/">
+              <Image src={google} />
+            </Link>
+          </div>
+          <div className="facebook">
+            <Link href="/">
+              <Image src={fb} />
+            </Link>
+          </div>
+        </div>
         <div className="btn"></div>
       </div>
     </div>
   );
-};
-
-export default Login;
+}

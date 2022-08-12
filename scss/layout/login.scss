@@ -1,0 +1,45 @@
+.login {
+  .wrapper {
+    position: relative;
+    text-align: center;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 0.0625rem 0.25rem 0px;
+    border-radius: 0.75rem;
+    overflow-y: auto;
+
+    @media (min-width: 600px) {
+      width: 500px;
+      margin: auto;
+    }
+
+    .brand {
+      width: 40%;
+      margin: auto;
+    }
+
+    .component {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin: 1rem auto;
+    }
+
+    .providers {
+      & > div {
+        width: 80%;
+        margin: 0px auto 1rem;
+        border-radius: 0.5rem;
+
+        & > span {
+          vertical-align: middle;
+        }
+      }
+
+      .google {
+        border: 1px solid $social-border;
+      }
+
+      .facebook {
+        background-color: $fb;
+      }
+    }
+  }
+}
