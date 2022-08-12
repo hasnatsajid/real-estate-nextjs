@@ -5,10 +5,11 @@
     box-shadow: rgba(0, 0, 0, 0.16) 0px 0.0625rem 0.25rem 0px;
     border-radius: 0.75rem;
     overflow-y: auto;
+    min-height: 100vh;
 
     @media (min-width: 600px) {
       width: 500px;
-      margin: auto;
+      margin: 1rem auto;
     }
 
     .brand {
@@ -28,6 +29,17 @@
         margin: 0px auto 1rem;
         border-radius: 0.5rem;
 
+        & > div {
+          display: flex;
+          align-items: center;
+          cursor: pointer;
+          padding: 0.75rem 1.5rem;
+
+          p {
+            flex: 1;
+          }
+        }
+
         & > span {
           vertical-align: middle;
         }
@@ -35,10 +47,32 @@
 
       .google {
         border: 1px solid $social-border;
+
+        &:hover {
+          background-color: rgba($color: $social-border, $alpha: 0.2);
+        }
       }
 
       .facebook {
-        background-color: $fb;
+        color: white;
+        background-color: rgba($color: $fb, $alpha: 0.9);
+
+        &:hover {
+          background-color: rgba($color: $fb, $alpha: 1);
+        }
+      }
+    }
+
+    .signup {
+      & > div {
+        width: 80%;
+        margin: auto;
+        display: flex;
+        justify-content: center;
+
+        span {
+          margin-right: 1rem;
+        }
       }
     }
   }

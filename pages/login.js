@@ -16,16 +16,27 @@ export default function Login() {
         <div className="providers">
           <div className="google">
             <Link href="/">
-              <Image src={google} />
+              <div>
+                <Image src={google} />
+                <p>Continue with Google</p>
+              </div>
             </Link>
           </div>
           <div className="facebook">
             <Link href="/">
-              <Image src={fb} />
+              <div>
+                <Image src={fb} />
+                <p>Continue with Facebook</p>
+              </div>
             </Link>
           </div>
         </div>
-        <div className="btn"></div>
+        <div className="signup">
+          <div>
+            <span>Not Registered ?</span>
+            <Link href="/">Create new account</Link>
+          </div>
+        </div>
       </div>
     </div>
   );
