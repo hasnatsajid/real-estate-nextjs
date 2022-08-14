@@ -27,6 +27,10 @@
       display: flex;
       justify-content: space-between;
       padding: 2rem 0;
+
+      @media (max-width: 798px) {
+        flex-direction: column;
+      }
     }
 
     .heading {
@@ -42,6 +46,10 @@
       display: flex;
       width: 50%;
       justify-content: space-around;
+
+      @media (max-width: 798px) {
+        width: 100%;
+      }
     }
 
     &-newsletter {
@@ -60,6 +68,15 @@
           }
         }
       }
+
+      @media (max-width: 798px) {
+        width: 100%;
+        margin-top: 5%;
+      }
+    }
+
+    @media (max-width: 798px) {
+      font-size: 12px;
     }
   }
 }
