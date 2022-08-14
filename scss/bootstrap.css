@@ -89,7 +89,7 @@
 
 body {
   margin: 0;
-  font-family: var(--bs-body-font-family);
+  /* font-family: var(--bs-body-font-family); */
   font-size: var(--bs-body-font-size);
   font-weight: var(--bs-body-font-weight);
   line-height: var(--bs-body-line-height);
@@ -182,7 +182,7 @@ h6,
 
 p {
   margin-top: 0;
-  margin-bottom: 1rem;
+  /* margin-bottom: 1rem; */
 }
 
 abbr[title] {
@@ -201,7 +201,7 @@ address {
 
 ol,
 ul {
-  padding-left: 2rem;
+  /* padding-left: 2rem; */
 }
 
 ol,
@@ -264,8 +264,9 @@ sup {
 }
 
 a {
-  color: var(--bs-link-color);
-  text-decoration: underline;
+  /* color: var(--bs-link-color); */
+  text-decoration: none;
+  /* text-decoration: underline; */
 }
 a:hover {
   color: var(--bs-link-hover-color);

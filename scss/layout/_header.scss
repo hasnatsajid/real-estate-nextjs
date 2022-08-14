@@ -1,5 +1,6 @@
 .header {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.108);
+  background-color: $white;
 
   nav {
     width: 98%;
@@ -26,13 +27,14 @@
 
     .logo {
       width: 250px;
+      cursor: pointer;
 
       @media (max-width: 940px) {
         width: 190px;
       }
     }
 
-    .navbar {
+    .menubar {
       display: flex;
       margin-left: 2rem;
       justify-content: space-between;
@@ -82,18 +84,24 @@
 
     .auth {
       margin-right: 2rem;
+      display: flex;
 
       .login {
+        margin-right: 1rem;
+      }
+
+      .signup {
         // padding: 5px 10px;
         a {
-          border: 1px solid $dark-blue;
+          // border: 1px solid $dark-blue;
           border-radius: 5px;
           padding: 0.4rem 1rem;
           transition: 0.2s all ease;
+          background-color: $dark-blue;
+          color: $white;
 
           &:hover {
-            color: $white;
-            background-color: $dark-blue;
+            background-color: rgba($color: $dark-blue, $alpha: 0.85);
           }
 
           @media (max-width: 940px) {

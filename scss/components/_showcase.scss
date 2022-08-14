@@ -13,9 +13,10 @@
     background-repeat: no-repeat;
     padding-top: 5%;
 
-    .search-container {
+    .home-container {
       height: inherit;
-      width: 40%;
+      // width: 40%;
+      max-width: 46.5rem;
       margin: auto;
       text-align: center;
 
@@ -94,13 +95,13 @@
         }
       }
 
-      @media (max-width: 940px) {
-        width: 60%;
-      }
+      // @media (max-width: 940px) {
+      //   width: 60%;
+      // }
 
-      @media (max-width: 480px) {
-        width: 85%;
-      }
+      // @media (max-width: 480px) {
+      //   width: 85%;
+      // }
     }
   }
 }
