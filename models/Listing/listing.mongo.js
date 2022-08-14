@@ -35,6 +35,6 @@ const ListingSchema = new Schema({
     type,
   },
   location: {
-    type: Points,
+    type: Point,
   },
 });
