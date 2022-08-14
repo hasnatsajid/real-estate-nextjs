@@ -1,5 +1,7 @@
-import { useState } from 'react';
-import { Range } from 'react-range';
+import Image from 'next/image';
+import React, { useState } from 'react';
+import Filters from '../public/svgs/filter.svg';
+import SearchBlock from './SearchBlock';
 
 const AdvanceSearch = () => {
   const [values, setValues] = useState([50000]);
@@ -7,7 +9,24 @@ const AdvanceSearch = () => {
   return (
     <div className="advanceSearch">
       <div className="wrapper">
-        <div className="row g-3">
+        <div className="search-bar">
+          <SearchBlock />
+        </div>
+        <div className="additional">
+          <div className="options">
+            <div className="type">Property Type</div>
+            <div className="price">Price</div>
+            <div className="bed">Beds</div>
+            <div className="filters">
+              <div className="icon">
+                <Image src={Filters} />
+              </div>
+              <div className="text">Filters</div>
+            </div>
+          </div>
+          <div className="map">Map</div>
+        </div>
+        {/* <div className="row g-3">
           <div className="col-sm-3">
             <input type="text" className="form-control" placeholder="Select Location" aria-label="City" />
           </div>
@@ -81,7 +100,7 @@ const AdvanceSearch = () => {
           <div className="col-sm">
             <input type="button" className="form-control search-btn" value="Search" placeholder="Zip" />
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
   );

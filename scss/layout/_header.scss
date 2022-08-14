@@ -1,5 +1,6 @@
 .header {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.108);
+  background-color: $white;
 
   nav {
     width: 98%;
@@ -26,6 +27,7 @@
 
     .logo {
       width: 250px;
+      cursor: pointer;
 
       @media (max-width: 940px) {
         width: 190px;

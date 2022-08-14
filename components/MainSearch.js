@@ -1,4 +1,5 @@
 import { IoSearchOutline } from 'react-icons/io5';
+import SearchBlock from './SearchBlock';
 
 const MainSearch = () => {
   return (
@@ -13,9 +14,7 @@ const MainSearch = () => {
           <div className="search-item">Agents</div>
         </div>
         <div className="search-block">
-          <div className="search-input">
-            <input type="search" name="" id="" />
-          </div>
+          <SearchBlock />
           <button className="filters">Filters</button>
           <button className="search">Search</button>
         </div>
