@@ -1,4 +1,8 @@
 import Image from 'next/image';
+import { useState, useEffect } from 'react';
+
+import PhotoSwipeLightbox from 'photoswipe/lightbox';
+import 'photoswipe/style.css';
 
 import ImageGallery from 'react-image-gallery';
 
@@ -13,7 +17,21 @@ import house2 from '../public/houses/house2.jpg';
 import house3 from '../public/houses/house3.jpg';
 import house4 from '../public/houses/house4.jpg';
 
-const ListingDetail = () => {
+const ListingDetail = (props) => {
+  useEffect(() => {
+    let lightbox = new PhotoSwipeLightbox({
+      gallery: '#' + props.galleryID,
+      children: 'a',
+      pswpModule: () => import('photoswipe'),
+    });
+    lightbox.init();
+
+    return () => {
+      lightbox.destroy();
+      lightbox = null;
+    };
+  }, []);
+
   const images = [
     {
       original: 'https://picsum.photos/id/1018/1000/600/',
@@ -28,6 +46,87 @@ const ListingDetail = () => {
       thumbnail: 'https://picsum.photos/id/1019/250/150/',
     },
   ];
+
+  return (
+    <>
+      {/* <div className="row">
+        <div id="gallery--header-home" className="pswp-docs__home-gallery">
+          <figure class="pswp-docs__home-gallery-item">
+            <a href="https://cdn.photoswipe.com/photoswipe-demo-images/photos/home-demo/luca-bravo-ny6qxqv_m04-unsplash_snrzpf/luca-bravo-ny6qxqv_m04-unsplash_snrzpf_c_scale,w_2500.jpg">
+              <img
+                src="https://cdn.photoswipe.com/photoswipe-demo-images/photos/home-demo/luca-bravo-ny6qxqv_m04-unsplash_snrzpf/luca-bravo-ny6qxqv_m04-unsplash_snrzpf_c_scale,w_664.jpg"
+                alt=""
+              />
+            </a>
+          </figure>
+          <figure class="pswp-docs__home-gallery-item">
+            <a
+              style={{ paddingBottom: '100%' }}
+              href="https://cdn.photoswipe.com/photoswipe-demo-images/photos/home-demo/luca-bravo-O453M2Liufs-unsplash_qqt53u/luca-bravo-O453M2Liufs-unsplash_qqt53u_c_scale,w_2500.jpg"
+            >
+              <img
+                src="https://cdn.photoswipe.com/photoswipe-demo-images/photos/home-demo/luca-bravo-O453M2Liufs-unsplash_qqt53u/luca-bravo-O453M2Liufs-unsplash_qqt53u_c_scale,w_300.jpg"
+                alt=""
+              />
+            </a>
+          </figure>
+          <figure class="pswp-docs__home-gallery-item">
+            <a href="https://cdn.photoswipe.com/photoswipe-demo-images/photos/home-demo/luca-bravo-VowIFDxogG4-unsplash_ibrktu/luca-bravo-VowIFDxogG4-unsplash_ibrktu_c_scale,w_2500.jpg">
+              <img
+                src="https://cdn.photoswipe.com/photoswipe-demo-images/photos/home-demo/luca-bravo-VowIFDxogG4-unsplash_ibrktu/luca-bravo-VowIFDxogG4-unsplash_ibrktu_c_scale,w_300.jpg"
+                alt=""
+              />
+            </a>
+          </figure>
+          <figure class="pswp-docs__home-gallery-item">
+            <a
+              style={{ paddingBottom: '100%' }}
+              href="https://cdn.photoswipe.com/photoswipe-demo-images/photos/home-demo/luca-bravo-zAjdgNXsMeg-unsplash_q6zdih/luca-bravo-zAjdgNXsMeg-unsplash_q6zdih_c_scale,w_2500.jpg"
+            >
+              <img
+                src="https://cdn.photoswipe.com/photoswipe-demo-images/photos/home-demo/luca-bravo-zAjdgNXsMeg-unsplash_q6zdih/luca-bravo-zAjdgNXsMeg-unsplash_q6zdih_c_scale,w_300.jpg"
+                alt=""
+              />
+            </a>
+          </figure>
+          <figure class="pswp-docs__home-gallery-item">
+            <a
+              style={{ paddingBottom: '100%' }}
+              href="https://cdn.photoswipe.com/photoswipe-demo-images/photos/home-demo/luca-bravo-A-fubu9QJxE-unsplash_jxy5p8/luca-bravo-A-fubu9QJxE-unsplash_jxy5p8_c_scale,w_2500.jpg"
+            >
+              <img
+                src="https://cdn.photoswipe.com/photoswipe-demo-images/photos/home-demo/luca-bravo-A-fubu9QJxE-unsplash_jxy5p8/luca-bravo-A-fubu9QJxE-unsplash_jxy5p8_c_scale,w_300.jpg"
+                alt=""
+              />
+            </a>
+          </figure>
+        </div>
+      </div> */}
+
+      <div className="container">
+        <div id="gallery--header-home" className="pswp-docs__home-gallery">
+          <div className="row">
+            <div className="pswp-gallery" id={props.galleryID}>
+              {props.images.map((image, index) => (
+                <figure class="pswp-docs__home-gallery-item">
+                  <a
+                    href={image.largeURL}
+                    // data-pswp-width={image.width}
+                    // data-pswp-height={image.height}
+                    key={props.galleryID + '-' + index}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <img src={image.largeURL} alt="" />
+                  </a>
+                </figure>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </>
+  );
 
   return (
     <div className="detail">

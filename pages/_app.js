@@ -1,5 +1,5 @@
 import { SessionProvider } from 'next-auth/react';
-import '../scss/bootstrap.css';
+// import '../scss/bootstrap.css';
 import '../scss/main.scss';
 
 import { store } from '../store';

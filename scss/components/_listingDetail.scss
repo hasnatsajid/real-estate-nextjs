@@ -1,5 +1,72 @@
 @import '../image-gallery.scss';
 
+.container {
+  width: 1140px;
+  margin: 0 auto;
+}
+.row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  // margin: 0 2rem;
+
+  .pswp-gallery {
+    width: 100%;
+  }
+
+  img {
+    width: 100px;
+  }
+
+  .pswp-docs__home-gallery {
+    grid-gap: 7px;
+    display: grid;
+    grid-template-columns: 1fr 0.5fr 0.5fr;
+    position: relative;
+    width: 100%;
+  }
+
+  .pswp-docs__home-gallery {
+    .pswp-docs__home-gallery-item:first-child {
+      grid-row: span 2;
+    }
+    .pswp-docs__home-gallery-item {
+      position: relative;
+
+      a {
+        display: block;
+        height: 100%;
+        overflow: hidden;
+        padding-bottom: 100%;
+        position: relative;
+        width: 100%;
+      }
+
+      img {
+        height: 100%;
+        left: 0;
+        object-fit: cover;
+        position: absolute;
+        top: 0;
+        width: 100%;
+      }
+
+      figcaption,
+      .theme-code-block--hidden {
+        display: none;
+      }
+    }
+  }
+
+  figure {
+    .pswp-docs__home-gallery-item {
+      display: block;
+      margin: 0;
+      padding: 0;
+    }
+  }
+}
+
 .detail {
   .wrapper {
     width: 990px;
