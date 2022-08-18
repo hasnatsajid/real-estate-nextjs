@@ -2,7 +2,7 @@ import { SessionProvider } from 'next-auth/react';
 // import '../scss/bootstrap.css';
 import '../scss/main.scss';
 
-import { store } from '../store';
+import store from '../stores/store';
 import { Provider } from 'react-redux';
 
 function MyApp({ Component, pageProps: { session, ...pageProps } }) {

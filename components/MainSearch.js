@@ -7,11 +7,10 @@ const MainSearch = () => {
       <div className="search-container">
         <div className="search-items">
           <div className="search-item active">
-            <button>Buy</button>
+            <p>Buy</p>
             <span></span>
           </div>
           <div className="search-item">Rent</div>
-          <div className="search-item">Agents</div>
         </div>
         <div className="search-block">
           <SearchBlock />
