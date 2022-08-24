@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
-import Logo from '../public/images/logos/logo-flat.png';
+import Logo from '../../public/images/logos/logo-flat.png';
 import { HiMenuAlt4, HiX } from 'react-icons/hi';
 
 const Header = () => {

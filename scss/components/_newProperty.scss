@@ -1,0 +1,28 @@
+.new-property {
+  margin-bottom: 2rem;
+
+  .option-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+    .option {
+      width: max-content;
+      width: -moz-available;
+      text-align: center;
+      padding: 1rem;
+      color: $text-secondary;
+      position: relative;
+      border-bottom: 0.125rem solid $text-gray;
+
+      &:not(:last-child) {
+        margin-right: 0.3rem;
+      }
+
+      &.active {
+        color: $black;
+        border-bottom: 0.125rem solid $red;
+      }
+    }
+  }
+}

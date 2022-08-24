@@ -1,7 +1,15 @@
-import { IoSearchOutline } from 'react-icons/io5';
+import { useState } from 'react';
 import SearchBlock from './SearchBlock';
 
+import Modal from './UI/Modal';
+
 const MainSearch = () => {
+  const [isFilterActive, setIsFilterActive] = useState(false);
+
+  const toggleFilter = () => {
+    setIsFilterActive((prev) => !prev);
+  };
+
   return (
     <div className="main-search">
       <div className="search-container">
@@ -14,16 +22,13 @@ const MainSearch = () => {
         </div>
         <div className="search-block">
           <SearchBlock />
-          <button className="filters">Filters</button>
+          <button className="filters" onClick={toggleFilter}>
+            Filters
+          </button>
           <button className="search">Search</button>
         </div>
       </div>
-      {/* <div className="search-input">
-        <input type="search" name="search" id="search" placeholder="Search Location" />
-        <button>
-          <IoSearchOutline />
-        </button>
-      </div> */}
+      {isFilterActive && <Modal heading="Filters" toggleFilter={toggleFilter} />}
     </div>
   );
 };

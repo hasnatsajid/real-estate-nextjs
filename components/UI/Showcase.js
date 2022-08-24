@@ -1,9 +1,4 @@
-import { useEffect, useState } from 'react';
-import ReactPlayer from 'react-player';
-import Image from 'next/image';
-
-import Home from '../public/house.png';
-import MainSearch from './MainSearch';
+import MainSearch from '../MainSearch';
 
 const Showcase = () => {
   return (
