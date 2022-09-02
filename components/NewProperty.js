@@ -6,11 +6,13 @@ const NewProperty = () => {
       <div className="option-bar">
         {newPropertyOptions.map((element) => {
           return (
-            <div className="option active" key={ElementInternals.id}>
+            <div className="option active" key={element.id}>
               {element.option}
             </div>
           );
         })}
+
+        <div className="property-details"></div>
       </div>
     </div>
   );

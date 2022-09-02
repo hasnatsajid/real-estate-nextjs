@@ -19,6 +19,23 @@
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
   z-index: 30;
   animation: slide-down 300ms ease-out forwards;
+
+  &__header {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    & > span {
+      position: absolute !important;
+      right: 3%;
+      border-radius: 0.5rem;
+
+      &:hover {
+        background-color: $bg-hover-primary !important;
+      }
+    }
+  }
 }
 
 @media (min-width: 768px) {

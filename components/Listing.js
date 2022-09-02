@@ -4,7 +4,7 @@ import { FaHouseUser } from 'react-icons/fa';
 
 const Listing = ({ img, Agent }) => {
   return (
-    <article className="listing mt-3 mb-5">
+    <article className="listing">
       <div className="listing__container">
         <div className="listing__agent">
           <div className="listing__agent-name">

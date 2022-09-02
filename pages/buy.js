@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import AdvanceSearch from '../components/AdvanceSearch';
-import Layout from '../components/Layout';
+import Layout from '../components/UI/Layout';
 import Listing from '../components/Listing';
 
 import house1 from '../public/houses/house1.jpg';

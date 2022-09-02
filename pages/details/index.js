@@ -1,4 +1,4 @@
-import Layout from '../../components/Layout';
+import Layout from '../../components/UI/Layout';
 import ListingDetail from '../../components/ListingDetail';
 
 const Detail = () => {
