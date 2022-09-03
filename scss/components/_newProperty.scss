@@ -25,4 +25,35 @@
       }
     }
   }
+
+  .detail-wrapper {
+    width: 70%;
+    margin: 7% auto;
+  }
+
+  .property-details {
+    color: $primary-text;
+    font-size: 1rem;
+
+    h1 {
+      font-size: 1.5rem;
+    }
+
+    .types {
+      select {
+        color: $primary-text;
+        width: 200px;
+        max-width: 200px;
+        border-radius: 0.5rem;
+        border: 1px solid $primary-text;
+        background-color: $white;
+        font-size: 1rem;
+        padding: 0.5rem 1rem;
+
+        option {
+          color: $primary-text;
+        }
+      }
+    }
+  }
 }
