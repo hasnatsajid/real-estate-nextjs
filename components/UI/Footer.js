@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { FaFacebookF, FaTwitter, FaYoutube, FaLinkedinIn, FaPinterestP, FaInstagram } from 'react-icons/fa';
+import { FiExternalLink } from 'react-icons/fi';
 
 const Footer = () => {
   return (
@@ -62,6 +63,15 @@ const Footer = () => {
               <input type="search" name="email" id="email-holder" placeholder="Enter your email" />
             </div>
           </div>
+        </div>
+      </div>
+      <div className="footer__hassuu">
+        <div className="intro">
+          <span className="created">Created By</span>
+          <a href="hasnatsajid.com" className="hassuu">
+            <span>Hassuu</span>
+            <FiExternalLink />
+          </a>
         </div>
       </div>
     </footer>

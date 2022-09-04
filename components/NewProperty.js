@@ -1,4 +1,11 @@
+import Image from 'next/image';
 import { newPropertyOptions } from '../utils/newPropertyOptions';
+import PropertyAmenities from './PropertyAmenities';
+import PropertyDescription from './PropertyDescription';
+import PropertyDetail from './PropertyDetail';
+import PropertyImages from './PropertyImages';
+import PropertyPricing from './PropertyPricing';
+import Divider from './UI/Divider';
 
 const NewProperty = () => {
   return (
@@ -14,25 +21,15 @@ const NewProperty = () => {
       </div>
 
       <div className="detail-wrapper">
-        <div className="property-details">
-          <div className="title">
-            <h1>Property Details</h1>
-          </div>
-
-          <div className="sub-title">
-            <h3>What type of property do you have?</h3>
-          </div>
-
-          <div className="types">
-            <select name="types" id="types">
-              <option value="house" selected>
-                House
-              </option>
-              <option value="apartment">Apartment</option>
-              <option value="commercial">Commercial</option>
-            </select>
-          </div>
-        </div>
+        <PropertyDetail />
+        <Divider />
+        <PropertyAmenities />
+        <Divider />
+        <PropertyPricing />
+        <Divider />
+        <PropertyDescription />
+        <Divider />
+        <PropertyImages />
       </div>
     </div>
   );

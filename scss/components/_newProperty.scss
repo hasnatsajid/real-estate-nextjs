@@ -27,17 +27,40 @@
   }
 
   .detail-wrapper {
-    width: 70%;
+    width: 100%;
+    max-width: 660px;
     margin: 7% auto;
+    color: $primary-text;
+
+    * {
+      font-family: 'Lato', sans-serif;
+      font-size: 1rem;
+    }
   }
 
-  .property-details {
-    color: $primary-text;
-    font-size: 1rem;
-
+  .property-details,
+  .property-amenities,
+  .property-pricing,
+  .property-description,
+  .property-images {
     h1 {
       font-size: 1.5rem;
+      margin: 1rem 0;
     }
+
+    h2 {
+      font-size: 1.25rem;
+      margin: 1rem 0;
+    }
+
+    .sub-title {
+      margin: 1rem 0;
+    }
+  }
+
+  .property-details,
+  .property-pricing {
+    max-width: 21.5rem;
 
     .types {
       select {
@@ -52,6 +75,58 @@
 
         option {
           color: $primary-text;
+        }
+      }
+    }
+
+    .beds,
+    .baths,
+    .parking {
+      display: flex;
+      justify-content: space-between;
+
+      .counter {
+        display: flex;
+        font-weight: 600;
+        align-items: center;
+        width: 40%;
+        justify-content: space-between;
+
+        .plus,
+        .minus {
+          border: 1px solid $primary-text;
+          border-radius: 50px;
+          padding: 0.2rem;
+          width: 2rem;
+          height: 2rem;
+          font-size: 1rem;
+          text-align: center;
+          line-height: 1.5rem;
+        }
+      }
+    }
+  }
+
+  .property-amenities {
+    accent-color: $primary-text;
+
+    .amenities-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+
+      .amenity {
+        width: 40%;
+        display: flex;
+        align-items: center;
+        margin-bottom: 1rem;
+
+        .checkbox {
+          margin-right: 1rem;
+          input {
+            // border: none;
+            // outline: 1px solid $border-secondary;
+          }
         }
       }
     }
