@@ -11,9 +11,7 @@ const PropertyDetail = () => {
 
       <div className="types">
         <select name="types" id="types">
-          <option value="house" selected>
-            House
-          </option>
+          <option value="house">House</option>
           <option value="apartment">Apartment</option>
           <option value="commercial">Commercial</option>
         </select>

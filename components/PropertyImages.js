@@ -20,13 +20,13 @@ const PropertyImages = () => {
       </div>
 
       <div className="videos">
-        <h2>Video</h2>
+        <h2>Video tour</h2>
         <div className="form-input">
           <div className="label">
             <label htmlFor="">Youtube link (optional) </label>
           </div>
           <div className="input">
-            <input type="number" placeholder="sqm" />
+            <input type="number" placeholder="Link from Youtube" />
           </div>
         </div>
       </div>

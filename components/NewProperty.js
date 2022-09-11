@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import { newPropertyOptions } from '../utils/newPropertyOptions';
 import PropertyAmenities from './PropertyAmenities';
+import PropertyContact from './PropertyContact';
 import PropertyDescription from './PropertyDescription';
 import PropertyDetail from './PropertyDetail';
 import PropertyImages from './PropertyImages';
@@ -30,6 +31,8 @@ const NewProperty = () => {
         <PropertyDescription />
         <Divider />
         <PropertyImages />
+        <Divider />
+        <PropertyContact />
       </div>
     </div>
   );
