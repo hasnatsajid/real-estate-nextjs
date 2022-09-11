@@ -6,6 +6,7 @@ import PropertyDescription from './PropertyDescription';
 import PropertyDetail from './PropertyDetail';
 import PropertyImages from './PropertyImages';
 import PropertyPricing from './PropertyPricing';
+import PropertySubmit from './PropertySubmit';
 import Divider from './UI/Divider';
 
 const NewProperty = () => {
@@ -33,6 +34,8 @@ const NewProperty = () => {
         <PropertyImages />
         <Divider />
         <PropertyContact />
+        <Divider />
+        <PropertySubmit />
       </div>
     </div>
   );
