@@ -5,35 +5,52 @@ const ListingSchema = new Schema({
     type: String,
     required: true,
   },
-  price: {
-    type: Number,
-  },
-  beds: {
-    type: Number,
-  },
-  baths: {
-    type: Number,
-  },
-  area: {
-    type: Number,
-  },
   description: {
     type: String,
+    required: true,
   },
   type: {
     type: String,
+    required: true,
+  },
+  beds: {
+    type: Number,
+    required: true,
+  },
+  baths: {
+    type: Number,
+    required: true,
+  },
+  parking: {
+    type: Number,
+    required: true,
+  },
+  area: {
+    type: Number,
+    required: true,
+  },
+  amenities: {
+    type: [String],
+  },
+  price: {
+    type: Number,
     required: true,
   },
   listedAt: {
     type: Date,
     default: Date.now,
   },
-  facilities: {
+  photos: {
     type: [String],
+    required: true,
   },
-  // agent: {
-  //   type,
-  // },
+  video: String,
+  agent: {
+    name: String,
+    email: String,
+    image: String,
+    phone: Number,
+  },
   // location: {
   //   type: Point,
   // },

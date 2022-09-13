@@ -68,7 +68,7 @@ const Footer = () => {
       <div className="footer__hassuu">
         <div className="intro">
           <span className="created">Created By</span>
-          <a href="hasnatsajid.com" className="hassuu">
+          <a href="https://hasnatsajid.com" target="new" className="hassuu">
             <span>Hassuu</span>
             <FiExternalLink />
           </a>

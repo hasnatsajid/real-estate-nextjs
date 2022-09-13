@@ -12,7 +12,7 @@ import Divider from './UI/Divider';
 const NewProperty = () => {
   return (
     <div className="new-property">
-      <div className="option-bar">
+      {/* <div className="option-bar">
         {newPropertyOptions.map((element) => {
           return (
             <div className="option active" key={element.id}>
@@ -20,7 +20,7 @@ const NewProperty = () => {
             </div>
           );
         })}
-      </div>
+      </div> */}
 
       <div className="detail-wrapper">
         <PropertyDetail />

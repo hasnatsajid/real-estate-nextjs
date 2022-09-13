@@ -11,7 +11,7 @@
     background: url('../../public/home.jpg');
     background-size: cover;
     background-repeat: no-repeat;
-    padding-top: 5%;
+    padding-top: 3%;
 
     .home-container {
       height: inherit;
@@ -21,8 +21,11 @@
       text-align: center;
 
       .search-bar {
-        position: relative;
         font-family: 'Roboto', sans-serif;
+        display: flex;
+        flex-direction: column;
+        height: 50%;
+        justify-content: space-evenly;
 
         h1 {
           color: $white;
