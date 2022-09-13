@@ -15,7 +15,7 @@ const Overlay = ({ children, heading, toggleFilter }) => {
         <p>{heading}</p>
         <Image src="/svgs/close.svg" width={25} height={25} onClick={toggleFilter} />
       </h3>
-      <div className="content">{children}</div>
+      <div className="modal-content">{children}</div>
     </div>
   );
 };

@@ -46,6 +46,13 @@
     }
 
     &-additional {
+      display: flex;
+
+      .prop {
+        display: flex;
+        margin-right: 5px;
+      }
+
       span {
         margin: 0 10px 0 0;
         vertical-align: middle;
