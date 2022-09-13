@@ -1,5 +1,28 @@
 @import '../image-gallery.scss';
 
+.container {
+  width: 1140px;
+  margin: 0 auto;
+}
+.row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  // margin: 0 2rem;
+
+  img {
+    width: 100px;
+  }
+}
+
+.swiper {
+  height: 70vh;
+}
+
+.swiper-slide {
+  text-align: center;
+}
+
 .detail {
   .wrapper {
     width: 990px;

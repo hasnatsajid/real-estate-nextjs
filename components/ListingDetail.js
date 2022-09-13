@@ -1,6 +1,13 @@
-import Image from 'next/image';
+import { useState, useEffect } from 'react';
 
-import ImageGallery from 'react-image-gallery';
+import { Swiper, SwiperSlide } from 'swiper/react';
+
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/navigation';
+
+// import required modules
+import { Navigation, Autoplay } from 'swiper';
 
 import { BiBed, BiBath, BiCar, BiRuler, BiCctv } from 'react-icons/bi';
 import { FaHouseUser, FaSwimmingPool } from 'react-icons/fa';
@@ -13,7 +20,9 @@ import house2 from '../public/houses/house2.jpg';
 import house3 from '../public/houses/house3.jpg';
 import house4 from '../public/houses/house4.jpg';
 
-const ListingDetail = () => {
+const ListingDetail = (props) => {
+  useEffect(() => {}, []);
+
   const images = [
     {
       original: 'https://picsum.photos/id/1018/1000/600/',
@@ -31,12 +40,32 @@ const ListingDetail = () => {
 
   return (
     <div className="detail">
-      <ImageGallery
-        // ref={(i) => (this._imageGallery = i)}
-        items={images}
-        showPlayButton={false}
-        showThumbnails={false}
-      />
+      {/* Image Gallery */}
+
+      <Swiper
+        spaceBetween={50}
+        loop={true}
+        autoplay={{
+          delay: 1500,
+          disableOnInteraction: true,
+        }}
+        centeredSlides={true}
+        navigation={true}
+        modules={[Navigation, Autoplay]}
+        slidesPerView={1}
+      >
+        {images.map((image) => {
+          return (
+            <SwiperSlide key={image.original}>
+              <img src={image.original} alt="" />
+            </SwiperSlide>
+          );
+        })}
+        {/* <SwiperSlide>Slide 1</SwiperSlide>
+        <SwiperSlide>Slide 2</SwiperSlide>
+        <SwiperSlide>Slide 3</SwiperSlide>
+        <SwiperSlide>Slide 4</SwiperSlide> */}
+      </Swiper>
 
       <div className="listing-content">
         <div className="wrapper mt-5">
