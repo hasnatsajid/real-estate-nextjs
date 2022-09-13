@@ -11,7 +11,7 @@ import Agent2 from '../public/realestates/penhomes.jpg';
 
 export default function Buy() {
   return (
-    <div className="app">
+    <div className="buy">
       <Head>
         <title>Property for Sale | My Property Asia </title>
         <meta name="description" content="Built by My Property Asia" />

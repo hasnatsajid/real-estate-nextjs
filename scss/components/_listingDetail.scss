@@ -4,6 +4,12 @@
   .wrapper {
     width: 990px;
     margin: auto;
+    display: flex;
+
+    @media (max-width: 990px) {
+      display: block;
+      width: 100%;
+    }
   }
 
   .img {
@@ -18,6 +24,74 @@
   .listing-content {
     .main-content {
       width: 660px;
+      border: 1px solid $dark-blue;
+
+      & > div {
+        margin: 1rem 0;
+      }
+
+      .price {
+        font-size: 40px;
+      }
+
+      .meta {
+        font-size: 24px;
+        display: flex;
+
+        & > div {
+          margin-right: 2rem;
+
+          & > span {
+            margin-left: 0.35rem;
+          }
+        }
+      }
+
+      .amenities {
+        width: 100%;
+
+        .wrapper {
+          display: flex;
+          flex-wrap: wrap;
+          width: 90%;
+          margin: 1rem auto;
+        }
+
+        h3 {
+          width: 100%;
+        }
+
+        .amenity {
+          width: 50%;
+          display: flex;
+          align-items: center;
+          margin: 1% 0;
+
+          svg {
+            font-size: 20px;
+            margin-right: 0.5rem;
+          }
+
+          span {
+            font-size: 18px;
+          }
+        }
+      }
+
+      @media (max-width: 990px) {
+        width: 80%;
+        margin: auto;
+      }
+
+      @media (max-width: 480px) {
+        width: 97%;
+      }
+    }
+
+    .agent-section {
+      max-width: 300px;
+      border: 1px solid $dark-blue;
+      width: 300px;
     }
   }
 }

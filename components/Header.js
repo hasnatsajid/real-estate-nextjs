@@ -13,10 +13,12 @@ const Header = () => {
         {!menuActive && <HiMenuAlt4 className="menu-icon" onClick={() => setMenuActive(true)} />}
         {menuActive && <HiX className="menu-icon" onClick={() => setMenuActive(false)} />}
         <div className="logo">
-          <Image src={Logo} alt="My property asia | thailand" />
+          <Link href="/">
+            <Image src={Logo} alt="My property asia | thailand" />
+          </Link>
         </div>
         {menuActive && (
-          <div className="navbar">
+          <div className="menubar">
             <ul className="mobileActive">
               <li>
                 <Link href="/buy">Buy</Link>
@@ -47,7 +49,7 @@ const Header = () => {
             </div>
           </div>
         )}
-        <div className="navbar hideOnMobile">
+        <div className="menubar hideOnMobile">
           <ul>
             <li>
               <Link href="/buy">Buy</Link>
@@ -74,6 +76,9 @@ const Header = () => {
           <div className="auth">
             <div className="login">
               <Link href="/login">Login</Link>
+            </div>
+            <div className="signup">
+              <Link href="/signup">Join</Link>
             </div>
           </div>
         </div>
