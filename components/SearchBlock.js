@@ -1,10 +1,16 @@
-const SearchBlock = () => {
+const SearchBlock = ({ setDrawerOpen }) => {
   const onFocusing = () => {
-    console.log('focused');
+    setDrawerOpen(true);
+    // console.log('drawer opened');
   };
+
+  const onBluring = () => {
+    // setDrawerOpen(false);
+  };
+
   return (
     <div className="search-input">
-      <input type="search" name="" id="" placeholder="Search province or city" onFocus={onFocusing} />
+      <input type="search" name="" id="" placeholder="Search province or city" onFocus={onFocusing} onBlur={onBluring} />
     </div>
   );
 };

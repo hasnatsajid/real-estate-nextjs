@@ -51,9 +51,11 @@ const ListingSchema = new Schema({
     image: String,
     phone: Number,
   },
-  // location: {
-  //   type: Point,
-  // },
+  location: {
+    city: String,
+    state: String,
+    country: String,
+  },
 });
 
 export default mongoose.models.Listing || mongoose.model('Listing', ListingSchema);
