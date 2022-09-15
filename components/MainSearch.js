@@ -1,19 +1,64 @@
-import { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import SearchBlock from './SearchBlock';
 
 import { IoLocationOutline } from 'react-icons/io5';
+import Link from 'next/link';
 
 import Modal from './UI/Modal';
 
+import { provinces } from '../data/states';
+import Districts from './Search/Districts';
+
 const MainSearch = () => {
+  const refOne = useRef(null);
   const [isFilterActive, setIsFilterActive] = useState(false);
+  const [states, setStates] = useState([]);
+  const [statesActive, setStatesActive] = useState(false);
+  const [districtsActive, setDistrictsActive] = useState(false);
+  const [districts, setDistricts] = useState([]);
+  const [drawerOpen, setDrawerOpen] = useState(false);
 
   const toggleFilter = () => {
     setIsFilterActive((prev) => !prev);
   };
 
+  const onStateSearch = (e) => {
+    e.preventDefault();
+    setStatesActive(true);
+  };
+
+  const onDistrictSearch = (districts) => {
+    setDistricts(districts);
+    setStatesActive(false);
+    setDistrictsActive(true);
+  };
+
+  const goBack = (e) => {
+    e.preventDefault();
+    setStatesActive(true);
+    setDistrictsActive(false);
+  };
+
+  useEffect(() => {
+    document.addEventListener('click', handleOutsideClick, true);
+  }, []);
+
+  const handleOutsideClick = (e) => {
+    if (!refOne.current.contains(e.target)) {
+      // console.log('clicked outside');
+      setDrawerOpen(false);
+    }
+    // else {
+    //   console.log('clicked inside');
+    // }
+  };
+
+  useEffect(() => {
+    setStates(provinces);
+  }, []);
+
   return (
-    <div className="main-search">
+    <div className="main-search" ref={refOne}>
       <div className="search-container">
         <div className="search-items">
           <div className="search-item active">
@@ -22,39 +67,50 @@ const MainSearch = () => {
           </div>
           <div className="search-item">Rent</div>
         </div>
-        <div className="search-block focused">
-          <SearchBlock />
+        <div className="search-block ">
+          <SearchBlock setDrawerOpen={setDrawerOpen} />
           <button className="filters" onClick={toggleFilter}>
             Filters
           </button>
           <button className="search">Search</button>
         </div>
-        <div className="search-drawer">
-          <div className="item">
-            <span>
-              <IoLocationOutline />
-            </span>
-            <div className="area">Ontario, Canada</div>
+        {drawerOpen && (
+          <div className="search-drawer">
+            {!statesActive && !districtsActive && (
+              <Link href="/">
+                <a onClick={onStateSearch}>
+                  <div className="item">
+                    <span>
+                      <IoLocationOutline />
+                    </span>
+                    <div className="area">Search by Province</div>
+                  </div>
+                </a>
+              </Link>
+            )}
+            {statesActive && (
+              <div className="states">
+                <div className="item">
+                  {/* <div className="back" onClick={goBack}>
+                    <TiArrowBack />
+                    <p>Select other state</p>
+                  </div> */}
+                  All States
+                </div>
+                {states &&
+                  states.map((state) => (
+                    <div className="item" onClick={() => onDistrictSearch(state.districts)}>
+                      <span>
+                        <IoLocationOutline />
+                      </span>
+                      <div className="area">{state.name}</div>
+                    </div>
+                  ))}
+              </div>
+            )}
+            {districtsActive && <Districts goBack={goBack} districts={districts} />}
           </div>
-          <div className="item">
-            <span>
-              <IoLocationOutline />
-            </span>
-            <div className="area">Ontario, Canada</div>
-          </div>
-          <div className="item">
-            <span>
-              <IoLocationOutline />
-            </span>
-            <div className="area">Ontario, Canada</div>
-          </div>
-          <div className="item">
-            <span>
-              <IoLocationOutline />
-            </span>
-            <div className="area">Ontario, Canada</div>
-          </div>
-        </div>
+        )}
       </div>
       {isFilterActive && (
         <Modal heading="Filters" toggleFilter={toggleFilter}>
