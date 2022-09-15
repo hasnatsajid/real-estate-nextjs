@@ -4,8 +4,7 @@ import LatestProjects from '../components/LatestProjects';
 import Layout from '../components/UI/Layout';
 import Showcase from '../components/UI/Showcase';
 
-import dbConnect from '../lib/dbConnect';
-import Pet from '../models/Pet';
+// import dbConnect from '../lib/dbConnect';
 
 export default function Home() {
   return (
