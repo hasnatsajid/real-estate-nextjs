@@ -17,9 +17,14 @@ const MainSearch = () => {
   const [districtsActive, setDistrictsActive] = useState(false);
   const [districts, setDistricts] = useState([]);
   const [drawerOpen, setDrawerOpen] = useState(false);
+  const [buyActive, setBuyActive] = useState(true);
 
   const toggleFilter = () => {
     setIsFilterActive((prev) => !prev);
+  };
+
+  const onChangingCategory = () => {
+    setBuyActive((prev) => !prev);
   };
 
   const onStateSearch = (e) => {
@@ -44,9 +49,11 @@ const MainSearch = () => {
   }, []);
 
   const handleOutsideClick = (e) => {
-    if (!refOne.current.contains(e.target)) {
+    if (refOne.current && !refOne.current.contains(e.target)) {
       // console.log('clicked outside');
       setDrawerOpen(false);
+      setStatesActive(false);
+      setDistrictsActive(false);
     }
     // else {
     //   console.log('clicked inside');
@@ -61,11 +68,14 @@ const MainSearch = () => {
     <div className="main-search" ref={refOne}>
       <div className="search-container">
         <div className="search-items">
-          <div className="search-item active">
+          <div className={`search-item ${buyActive && 'active'}`} onClick={onChangingCategory}>
             <p>Buy</p>
             <span></span>
           </div>
-          <div className="search-item">Rent</div>
+          <div className={`search-item ${!buyActive && 'active'}`} onClick={onChangingCategory}>
+            <p>Rent</p>
+            <span></span>
+          </div>
         </div>
         <div className="search-block ">
           <SearchBlock setDrawerOpen={setDrawerOpen} />
@@ -99,7 +109,7 @@ const MainSearch = () => {
                 </div>
                 {states &&
                   states.map((state) => (
-                    <div className="item" onClick={() => onDistrictSearch(state.districts)}>
+                    <div className="item" key={state.name} onClick={() => onDistrictSearch(state.districts)}>
                       <span>
                         <IoLocationOutline />
                       </span>

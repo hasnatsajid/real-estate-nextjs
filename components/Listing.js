@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { BiBed, BiBath, BiCar } from 'react-icons/bi';
 import { FaHouseUser } from 'react-icons/fa';
 
-const Listing = ({ img, Agent }) => {
+const Listing = ({ img, Agent, listing }) => {
   return (
     <article className="listing">
       <Link href="/buy">
@@ -13,32 +13,32 @@ const Listing = ({ img, Agent }) => {
               <span>
                 <FaHouseUser />
               </span>
-              Johny mony
+              {listing.agent.name}
             </div>
             <div className="listing__agent-company">
               <Image src={Agent} />
             </div>
           </div>
           <div className="listing__featured-img">
-            <Image src={img} />
+            <img src={listing.photos[2]} />
           </div>
           <div className="listing__details">
-            <div className="listing__details-price">$325,000</div>
-            <div className="listing__details-title">3 bedroom house for sale</div>
+            <div className="listing__details-price">${listing.price.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ',')}</div>
+            <div className="listing__details-title">{listing.title}</div>
             <div className="listing__details-additional">
               <div className="prop">
                 <BiBed />
-                <span className="beds">2</span>
+                <span className="beds">{listing.beds}</span>
               </div>
               <div className="prop">
                 <BiBath />
-                <span className="baths">1</span>
+                <span className="baths">{listing.baths}</span>
               </div>
               <div className="prop">
                 <BiCar />
-                <span className="parking">1</span>
+                <span className="parking">{listing.parking}</span>
               </div>
-              <span className="property-type">House</span>
+              <span className="property-type">{listing.type}</span>
             </div>
           </div>
         </div>

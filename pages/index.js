@@ -5,7 +5,6 @@ import Layout from '../components/UI/Layout';
 import Showcase from '../components/UI/Showcase';
 
 import dbConnect from '../lib/dbConnect';
-import Pet from '../models/Pet';
 
 export default function Home() {
   return (

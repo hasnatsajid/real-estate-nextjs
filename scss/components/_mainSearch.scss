@@ -39,11 +39,15 @@
           left: 0px;
           background-color: $red;
           position: absolute;
-          display: block;
+          display: none;
         }
 
         &.active {
           color: $bg-selected;
+
+          span {
+            display: block;
+          }
           //   border-bottom: ;
         }
 

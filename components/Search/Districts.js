@@ -12,7 +12,7 @@ const Districts = ({ districts, goBack }) => {
       </div>
       {districts &&
         districts.map((district) => (
-          <div className="item">
+          <div className="item" key={district}>
             <span>
               <IoLocationOutline />
             </span>

@@ -1,5 +1,24 @@
 import mongoose, { Schema } from 'mongoose';
 
+const AgentSchema = new Schema({
+  name: {
+    type: String,
+    required: true,
+  },
+  email: {
+    type: String,
+    required: true,
+  },
+  phone: {
+    type: String,
+    required: true,
+  },
+  image: {
+    type: String,
+    required: true,
+  },
+});
+
 const ListingSchema = new Schema({
   title: {
     type: String,
@@ -46,15 +65,22 @@ const ListingSchema = new Schema({
   },
   video: String,
   agent: {
-    name: String,
-    email: String,
-    image: String,
-    phone: Number,
+    type: AgentSchema,
+    required: true,
   },
   location: {
-    city: String,
-    state: String,
-    country: String,
+    city: {
+      type: String,
+      required: true,
+    },
+    state: {
+      type: String,
+      required: true,
+    },
+    country: {
+      type: String,
+      required: true,
+    },
   },
 });
 

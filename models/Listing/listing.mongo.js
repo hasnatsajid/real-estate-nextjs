@@ -1,40 +1,87 @@
-import { Schema } from 'mongoose';
+import mongoose, { Schema } from 'mongoose';
+
+const AgentSchema = new Schema({
+  name: {
+    type: String,
+    required: true,
+  },
+  email: {
+    type: String,
+    required: true,
+  },
+  phone: {
+    type: String,
+    required: true,
+  },
+  image: {
+    type: String,
+    required: true,
+  },
+});
 
 const ListingSchema = new Schema({
   title: {
     type: String,
     required: true,
   },
-  price: {
-    type: Number,
-  },
-  beds: {
-    type: Number,
-  },
-  baths: {
-    type: Number,
-  },
-  area: {
-    type: Number,
-  },
   description: {
-    type: Mixed,
+    type: String,
+    required: true,
   },
   type: {
     type: String,
+    required: true,
+  },
+  beds: {
+    type: Number,
+    required: true,
+  },
+  baths: {
+    type: Number,
+    required: true,
+  },
+  parking: {
+    type: Number,
+    required: true,
+  },
+  area: {
+    type: Number,
+    required: true,
+  },
+  amenities: {
+    type: [String],
+  },
+  price: {
+    type: Number,
     required: true,
   },
   listedAt: {
     type: Date,
     default: Date.now,
   },
-  facilities: {
+  photos: {
     type: [String],
+    required: true,
   },
+  video: String,
   agent: {
-    type,
+    type: AgentSchema,
+    required: true,
   },
   location: {
-    type: Points,
+    city: {
+      type: String,
+      required: true,
+    },
+    state: {
+      type: String,
+      required: true,
+    },
+    country: {
+      type: String,
+      required: true,
+    },
   },
 });
+
+export default mongoose.models.Listing || mongoose.model('Listing', ListingSchema);

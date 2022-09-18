@@ -14,7 +14,9 @@ const Header = () => {
         {menuActive && <HiX className="menu-icon" onClick={() => setMenuActive(false)} />}
         <div className="logo">
           <Link href="/">
-            <Image src={Logo} alt="My property asia | thailand" />
+            <a>
+              <Image src={Logo} alt="My property asia | thailand" />
+            </a>
           </Link>
         </div>
         {menuActive && (
