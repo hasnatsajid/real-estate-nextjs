@@ -2,6 +2,7 @@ import Image from 'next/image';
 
 // import { useSession, signIn, signOut } from 'next-auth/react';
 
+import Image from 'next/image';
 import Logo from '../public/images/logos/logo-flat.png';
 import google from '../public/svgs/google.svg';
 import fb from '../public/svgs/fb.svg';
