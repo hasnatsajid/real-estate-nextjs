@@ -52,7 +52,7 @@ const Detail = ({ listing }) => {
 export default Detail;
 
 export async function getServerSideProps(context) {
-  const req = await fetch(`http://localhost:5000/api/listings/${context.params.pid}`);
+  const req = await fetch(`${process.env.NEXTAUTH_URL}/api/listings/${context.params.pid}`);
   const response = await req.json();
 
   return {

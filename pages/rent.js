@@ -35,7 +35,7 @@ export default function Buy({ listings }) {
 }
 
 export async function getServerSideProps() {
-  const res = await fetch(`http://localhost:5000/api/rent`);
+  const res = await fetch(`${process.env.NEXTAUTH_URL}/api/rent`);
   const listings = await res.json();
 
   return {
