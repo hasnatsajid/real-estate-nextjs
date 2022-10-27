@@ -1,4 +1,21 @@
-const PropertyAmenities = () => {
+import { useState } from 'react';
+
+const PropertyAmenities = ({ setNewProperty, newProperty }) => {
+  const [features, setFeatures] = useState([]);
+
+  const onChangeCheckbox = (e) => {
+    if (e.target.checked === true) {
+      setFeatures((prev) => [...prev, e.target.name]);
+    } else {
+      setFeatures((elements) => elements.filter((el) => el !== e.target.name));
+    }
+
+    setNewProperty((prev) => ({
+      ...prev,
+      ['amenities']: features,
+    }));
+  };
+
   return (
     <div className="property-amenities">
       <div className="title">
@@ -13,31 +30,31 @@ const PropertyAmenities = () => {
         <div className="amenities-wrapper">
           <div className="amenity">
             <div className="checkbox">
-              <input type="checkbox" name="" id="" />
+              <input type="checkbox" name="balcony" id="" onChange={onChangeCheckbox} />
             </div>
             <label htmlFor="balcony">Balcony</label>
           </div>
           <div className="amenity">
             <div className="checkbox">
-              <input type="checkbox" name="" id="" />
+              <input type="checkbox" name="furnished" id="" onChange={onChangeCheckbox} />
             </div>
             <label htmlFor="furnished">Furnished</label>
           </div>
           <div className="amenity">
             <div className="checkbox">
-              <input type="checkbox" name="" id="" />
+              <input type="checkbox" name="swimming pool" id="" onChange={onChangeCheckbox} />
             </div>
             <label htmlFor="swimming">Swimming pool</label>
           </div>
           <div className="amenity">
             <div className="checkbox">
-              <input type="checkbox" name="" id="" />
+              <input type="checkbox" name="garage" id="" onChange={onChangeCheckbox} />
             </div>
             <label htmlFor="garage">Garage</label>
           </div>
           <div className="amenity">
             <div className="checkbox">
-              <input type="checkbox" name="" id="" />
+              <input type="checkbox" name="solar" id="" onChange={onChangeCheckbox} />
             </div>
             <label htmlFor="solar">Solar</label>
           </div>

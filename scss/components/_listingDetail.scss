@@ -23,8 +23,20 @@
   text-align: center;
 }
 
+.title {
+  font-size: 2rem;
+  font-weight: 600;
+  padding: 1rem 0;
+
+  span {
+    text-transform: capitalize;
+    margin-left: 5px;
+  }
+}
+
 .detail {
-  .wrapper {
+  .wrapper,
+  .title {
     width: 990px;
     margin: auto;
     display: flex;
@@ -33,6 +45,11 @@
       display: block;
       width: 100%;
     }
+  }
+
+  .slider-img {
+    height: 100%;
+    width: 95%;
   }
 
   .img {
@@ -47,10 +64,10 @@
   .listing-content {
     .main-content {
       width: 660px;
-      border: 1px solid $dark-blue;
+      // border: 1px solid $dark-blue;
 
       & > div {
-        margin: 1rem 0;
+        margin: 1.5rem 0;
       }
 
       .price {
@@ -113,7 +130,7 @@
 
     .agent-section {
       max-width: 300px;
-      border: 1px solid $dark-blue;
+      // border: 1px solid $dark-blue;
       width: 300px;
     }
   }

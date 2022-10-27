@@ -2,7 +2,7 @@ const PropertySubmit = () => {
   return (
     <div className="property-submit">
       <div className="submit-btn">
-        <button>Submit</button>
+        <button type="submit">Submit</button>
       </div>
     </div>
   );

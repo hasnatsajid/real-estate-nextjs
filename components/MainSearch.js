@@ -28,6 +28,7 @@ const MainSearch = () => {
   };
 
   const onStateSearch = (e) => {
+    console.log('on state search');
     e.preventDefault();
     setStatesActive(true);
   };
@@ -52,11 +53,10 @@ const MainSearch = () => {
     if (refOne.current && !refOne.current.contains(e.target)) {
       // console.log('clicked outside');
       setDrawerOpen(false);
-      setStatesActive(false);
-      setDistrictsActive(false);
     }
     // else {
-    //   console.log('clicked inside');
+    // console.log('clicked inside');
+    // setDrawerOpen(true);
     // }
   };
 
@@ -77,7 +77,7 @@ const MainSearch = () => {
             <span></span>
           </div>
         </div>
-        <div className="search-block ">
+        <div className="search-block">
           <SearchBlock setDrawerOpen={setDrawerOpen} />
           <button className="filters" onClick={toggleFilter}>
             Filters

@@ -1,4 +1,4 @@
-const PropertyDescription = () => {
+const PropertyDescription = ({ onChangeInput }) => {
   return (
     <div className="property-description">
       <div className="title">
@@ -8,10 +8,10 @@ const PropertyDescription = () => {
       <div className="description">
         <div className="form-input">
           <div className="label">
-            <label htmlFor="">Headline</label>
+            <label htmlFor="title">Title</label>
           </div>
           <div className="input">
-            <input type="text" />
+            <input type="text" name="title" onChange={onChangeInput} />
           </div>
         </div>
         <div className="form-input">
@@ -19,7 +19,7 @@ const PropertyDescription = () => {
             <label htmlFor="">Description</label>
           </div>
           <div className="input">
-            <textarea name="description"></textarea>
+            <textarea name="description" onChange={onChangeInput}></textarea>
           </div>
         </div>
       </div>

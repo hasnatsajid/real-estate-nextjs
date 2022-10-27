@@ -1,12 +1,16 @@
 import Layout from '../../components/UI/Layout';
 import ListingDetail from '../../components/ListingDetail';
+import { useRouter } from 'next/router';
 
-const Detail = () => {
+const Detail = ({ listing }) => {
+  console.log(listing);
+
   return (
     <div className="detail-page">
       <Layout>
         <ListingDetail
           galleryID="my-test-gallery"
+          listing={listing}
           images={[
             {
               largeURL: 'https://cdn.photoswipe.com/photoswipe-demo-images/photos/1/img-2500.jpg',
@@ -46,3 +50,14 @@ const Detail = () => {
 };
 
 export default Detail;
+
+export async function getServerSideProps(context) {
+  const req = await fetch(`http://localhost:5000/api/listings/${context.params.pid}`);
+  const response = await req.json();
+
+  return {
+    props: {
+      listing: response.data,
+    }, // will be passed to the page component as props
+  };
+}

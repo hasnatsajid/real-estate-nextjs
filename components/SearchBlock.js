@@ -2,7 +2,7 @@ import { IoLocationSharp } from 'react-icons/io5';
 
 const SearchBlock = ({ setDrawerOpen }) => {
   const onFocusing = () => {
-    // setDrawerOpen(true);
+    setDrawerOpen(true);
     // console.log('drawer opened');
   };
 

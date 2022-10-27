@@ -1,6 +1,35 @@
-const PropertyImages = () => {
+import { useEffect } from 'react';
+import { useState } from 'react';
+
+const PropertyImages = ({ setNewProperty, newProperty }) => {
+  const [photos, setPhotos] = useState([]);
+  const [video, setVideo] = useState('');
+
   const onAddingPhoto = (e) => {
-    console.log(e);
+    const imgPath = e.target.value;
+    const img = imgPath.slice(imgPath.lastIndexOf('\\') + 1);
+
+    setPhotos((prev) => [...prev, `/${img}`]);
+  };
+
+  useEffect(() => {
+    setNewProperty((prev) => ({
+      ...prev,
+      photos: photos,
+    }));
+  }, [photos]);
+
+  const onAddingVideo = (e) => {
+    const video = e.target.value;
+
+    if (video) {
+      setVideo(video);
+
+      setNewProperty((prev) => ({
+        ...prev,
+        [e.target.name]: video,
+      }));
+    }
   };
 
   return (
@@ -15,7 +44,7 @@ const PropertyImages = () => {
 
       <div className="images">
         <div className="photo">
-          <input type="file" onChange={onAddingPhoto} />
+          <input type="file" name="photos" onChange={onAddingPhoto} />
         </div>
       </div>
 
@@ -26,7 +55,7 @@ const PropertyImages = () => {
             <label htmlFor="">Youtube link (optional) </label>
           </div>
           <div className="input">
-            <input type="number" placeholder="Link from Youtube" />
+            <input type="text" name="video" placeholder="Link from Youtube" onChange={onAddingVideo} />
           </div>
         </div>
       </div>

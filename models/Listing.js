@@ -32,6 +32,10 @@ const ListingSchema = new Schema({
     type: String,
     required: true,
   },
+  property_type: {
+    type: String,
+    required: true,
+  },
   beds: {
     type: Number,
     required: true,

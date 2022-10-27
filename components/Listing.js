@@ -6,7 +6,7 @@ import { FaHouseUser } from 'react-icons/fa';
 const Listing = ({ img, Agent, listing }) => {
   return (
     <article className="listing">
-      <Link href="/buy">
+      <Link href={`/details/${listing._id}`}>
         <div className="listing__container">
           <div className="listing__agent">
             <div className="listing__agent-name">
@@ -16,11 +16,12 @@ const Listing = ({ img, Agent, listing }) => {
               {listing.agent.name}
             </div>
             <div className="listing__agent-company">
-              <Image src={Agent} />
+              <img src={listing.agent.image} />
+              {/* <Image src={listing.agent.image} layout="fill" /> */}
             </div>
           </div>
           <div className="listing__featured-img">
-            <img src={listing.photos[2]} />
+            <img src={listing.photos[0]} />
           </div>
           <div className="listing__details">
             <div className="listing__details-price">${listing.price.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ',')}</div>
@@ -38,7 +39,7 @@ const Listing = ({ img, Agent, listing }) => {
                 <BiCar />
                 <span className="parking">{listing.parking}</span>
               </div>
-              <span className="property-type">{listing.type}</span>
+              <span className="property-type">{listing.property_type}</span>
             </div>
           </div>
         </div>

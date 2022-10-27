@@ -1,4 +1,31 @@
-const PropertyContact = () => {
+import { useState } from 'react';
+
+const PropertyContact = ({ setNewProperty, onChangeInput, newProperty }) => {
+  const [agent, setAgent] = useState({});
+
+  const onChangeAgent = (e) => {
+    const { name, value } = e.target;
+
+    if (name !== 'image') {
+      setAgent((prev) => ({
+        ...prev,
+        [name]: value,
+      }));
+    } else {
+      const image = value.slice(value.lastIndexOf('\\') + 1);
+
+      setAgent((prev) => ({
+        ...prev,
+        [name]: image,
+      }));
+    }
+
+    setNewProperty((prev) => ({
+      ...prev,
+      agent: agent,
+    }));
+  };
+
   return (
     <div className="property-contact">
       <div className="title">
@@ -15,7 +42,7 @@ const PropertyContact = () => {
             <label htmlFor="">Name </label>
           </div>
           <div className="input">
-            <input type="text" placeholder="" />
+            <input type="text" name="name" placeholder="" onChange={onChangeAgent} />
           </div>
         </div>
         <div className="form-input">
@@ -23,7 +50,7 @@ const PropertyContact = () => {
             <label htmlFor="">Email</label>
           </div>
           <div className="input">
-            <input type="email" placeholder="" />
+            <input type="email" name="email" placeholder="" onChange={onChangeAgent} />
           </div>
         </div>
         <div className="form-input">
@@ -31,7 +58,7 @@ const PropertyContact = () => {
             <label htmlFor="">Mobile number </label>
           </div>
           <div className="input">
-            <input type="tel" placeholder="" />
+            <input type="tel" name="phone" placeholder="" onChange={onChangeAgent} />
           </div>
         </div>
         <div className="form-input">
@@ -39,7 +66,7 @@ const PropertyContact = () => {
             <label htmlFor="">Profile Pic </label>
           </div>
           <div className="input">
-            <input type="file" placeholder="" />
+            <input type="file" name="image" placeholder="" onChange={onChangeAgent} />
           </div>
         </div>
       </div>

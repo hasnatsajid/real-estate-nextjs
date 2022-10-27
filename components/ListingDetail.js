@@ -15,12 +15,19 @@ import { CgGym } from 'react-icons/cg';
 import { MdSecurity, MdOutlinePark } from 'react-icons/md';
 import { GiHomeGarage } from 'react-icons/gi';
 
+const amenities = {
+  garage: <GiHomeGarage />,
+  park: <MdOutlinePark />,
+  security: <MdSecurity />,
+  'swimming pool': <FaSwimmingPool />,
+};
+
 import house1 from '../public/houses/house1.jpg';
 import house2 from '../public/houses/house2.jpg';
 import house3 from '../public/houses/house3.jpg';
 import house4 from '../public/houses/house4.jpg';
 
-const ListingDetail = (props) => {
+const ListingDetail = ({ listing }) => {
   useEffect(() => {}, []);
 
   const images = [
@@ -42,22 +49,27 @@ const ListingDetail = (props) => {
     <div className="detail">
       {/* Image Gallery */}
 
+      <div className="title">
+        {listing.title}, <span> {listing.location.state}</span>
+      </div>
+
       <Swiper
-        spaceBetween={50}
+        // spaceBetween={50}
+        spaceBetween={0}
         loop={true}
         autoplay={{
-          delay: 1500,
+          delay: 3000,
           disableOnInteraction: true,
         }}
         centeredSlides={true}
         navigation={true}
         modules={[Navigation, Autoplay]}
-        slidesPerView={1}
+        slidesPerView={2}
       >
-        {images.map((image) => {
+        {listing.photos.map((image) => {
           return (
-            <SwiperSlide key={image.original}>
-              <img src={image.original} alt="" />
+            <SwiperSlide key={image}>
+              <img src={image} className="slider-img" alt="" />
             </SwiperSlide>
           );
         })}
@@ -68,46 +80,41 @@ const ListingDetail = (props) => {
       </Swiper>
 
       <div className="listing-content">
-        <div className="wrapper mt-5">
+        <div className="wrapper">
           <div className="main-content">
-            <div className="price">${1198000}</div>
+            <div className="price">$ {listing.price.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ',')}</div>
             <div className="meta">
               <div className="beds">
                 <BiBed />
-                <span>3</span>
+                <span>{listing.beds}</span>
               </div>
               <div className="baths">
                 <BiBath />
-                <span>2</span>
+                <span>{listing.baths}</span>
               </div>
               <div className="parking">
                 <BiCar />
-                <span>1</span>
+                <span>{listing.parking}</span>
               </div>
               <div className="area">
                 <BiRuler />
-                <span>1,180 sqft</span>
+                <span>{listing.area.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ',')} sqft</span>
               </div>
             </div>
             <div className="description">
               <h3>Description</h3>
-              <div>
-                <p>This mid terrace villa is in a residential cul de sac in Linwood and would be a good option for anyone looking in the area.</p>
-                <p>
-                  The property comprises and entrance hallway; generous lounge with windows to the front and rear as well as access to the kitchen; fitted
-                  kitchen with space for appliances and access to the garden; three good sized bedrooms on the upper level; four piece family bathroom with wash
-                  hand basin, WC, bath and shower cubicle; gas central heating; double glazing.
-                </p>
-              </div>
+              <div>{listing.description}</div>
             </div>
             <div className="amenities">
               <h3>Amenities</h3>
               <div className="wrapper">
-                <div className="amenity">
-                  <CgGym />
-                  <span>Gym</span>
-                </div>
-                <div className="amenity">
+                {listing.amenities.map((amenity) => (
+                  <div className="amenity" key={amenity}>
+                    {amenities[amenity.toLowerCase()]}
+                    <span>{amenity}</span>
+                  </div>
+                ))}
+                {/* <div className="amenity">
                   <FaSwimmingPool />
                   <span>Swimming Pool</span>
                 </div>
@@ -122,7 +129,7 @@ const ListingDetail = (props) => {
                 <div className="amenity">
                   <MdOutlinePark />
                   <span>Park</span>
-                </div>
+                </div> */}
               </div>
             </div>
           </div>
